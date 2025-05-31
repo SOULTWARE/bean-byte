@@ -34,8 +34,8 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-gradient-to-r from-gray-900/90 via-gray-800/90 to-gray-900/90 backdrop-blur-md shadow-lg'
-          : 'bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900'
+          ? 'bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-lg border-b border-gray-200/50 dark:border-gray-800/50'
+          : 'bg-white dark:bg-gray-950'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,15 +50,15 @@ export default function Navbar() {
                 <Image
                   src="/logo.svg"
                   alt="Bean & Byte Logo"
-                  width={120}
-                  height={30}
-                  className="invert transition-transform duration-300 group-hover:scale-105"
+                  width={160}
+                  height={40}
+                  className="transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-green-500/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-green-600/20 dark:bg-green-300/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <span className="text-xl font-bold text-white hidden sm:inline-block relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-green-500 after:transition-all after:duration-300 group-hover:after:w-full">
+              {/* <span className="text-xl font-bold text-gray-900 dark:text-white hidden sm:inline-block relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-green-600 dark:after:bg-green-300 after:transition-all after:duration-300 group-hover:after:w-full">
                 Bean & Byte
-              </span>
+              </span> */}
             </Link>
           </div>
 
@@ -72,28 +72,28 @@ export default function Navbar() {
                   href={item.href}
                   className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 group ${
                     isActive
-                      ? 'text-green-400'
-                      : 'text-gray-300 hover:text-white'
+                      ? 'text-green-700 dark:text-green-300'
+                      : 'text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white'
                   }`}
                 >
                   <span className="relative z-10">{item.name}</span>
                   {/* Hover and active effects */}
                   <div className={`absolute inset-0 rounded-lg transition-all duration-300 ${
                     isActive
-                      ? 'bg-green-500/10 scale-100'
-                      : 'bg-white/0 scale-90 group-hover:scale-100 group-hover:bg-white/5'
+                      ? 'bg-green-100 dark:bg-green-900/30 scale-100'
+                      : 'bg-gray-100 dark:bg-gray-800 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100'
                   }`}
                   />
                   {/* Active indicator dot */}
                   {isActive && (
-                    <div className="absolute -bottom-1 left-1/2 w-1 h-1 bg-green-500 rounded-full transform -translate-x-1/2" />
+                    <div className="absolute -bottom-1 left-1/2 w-1 h-1 bg-green-600 dark:bg-green-300 rounded-full transform -translate-x-1/2" />
                   )}
                 </Link>
               );
             })}
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+              className="p-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 cursor-pointer"
               aria-label="Toggle theme"
             >
               {mounted && (
@@ -114,7 +114,7 @@ export default function Navbar() {
                     </svg>
                   ) : (
                     <svg
-                      className="w-5 h-5 text-gray-900"
+                      className="w-5 h-5 text-gray-700"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -136,7 +136,7 @@ export default function Navbar() {
           <div className="flex items-center md:hidden">
             <button
               type="button"
-              className="relative inline-flex items-center justify-center p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300"
+              className="relative inline-flex items-center justify-center p-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <span className="sr-only">Open main menu</span>
@@ -177,7 +177,7 @@ export default function Navbar() {
       <div
         className={`${
           isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
-        } md:hidden absolute top-16 inset-x-0 bg-gradient-to-b from-gray-900 to-gray-800 shadow-lg transition-all duration-300 ease-in-out transform`}
+        } md:hidden absolute top-16 inset-x-0 bg-white dark:bg-gray-950 border-b border-gray-200/50 dark:border-gray-800/50 shadow-lg transition-all duration-300 ease-in-out transform`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1">
           {navigation.map((item) => {
@@ -188,8 +188,8 @@ export default function Navbar() {
                 href={item.href}
                 className={`block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300 ${
                   isActive
-                    ? 'text-green-400 bg-green-500/10'
-                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                    ? 'text-green-700 dark:text-green-300 bg-green-100 dark:bg-green-900/30'
+                    : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800'
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >

@@ -59,16 +59,16 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-950">
+    <footer className="bg-gray-200 dark:bg-gray-950 border-t border-gray-300/50 dark:border-gray-800/50">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-12 sm:py-16">
         {/* Main footer content */}
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-12">
           {/* Left section - Logo and tagline */}
           <div className="space-y-4">
-            <div className="text-2xl font-bold tracking-tight text-green-500">
+            <div className="text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-800 dark:from-green-300 dark:to-emerald-400">
               Bean & Byte
             </div>
-            <p className="text-gray-400 max-w-xs">
+            <p className="text-gray-700 dark:text-gray-200 max-w-xs">
               Coffee. Code. Community.
               <br />
               Where great ideas brew.
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Middle section - Navigation */}
           <div className="sm:justify-center">
-            <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase mb-4">
               Navigation
             </h3>
             <ul className="space-y-3">
@@ -85,7 +85,7 @@ export default function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-gray-400 hover:text-green-500 transition-colors duration-300"
+                    className="text-gray-700 dark:text-gray-200 hover:text-green-700 dark:hover:text-green-300 transition-colors duration-300"
                   >
                     {item.name}
                   </Link>
@@ -96,7 +96,7 @@ export default function Footer() {
 
           {/* Right section - Social links */}
           <div className="sm:justify-end">
-            <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase mb-4">
               Connect With Us
             </h3>
             <div className="flex space-x-6">
@@ -104,7 +104,7 @@ export default function Footer() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-400 hover:text-green-500 transition-colors duration-300"
+                  className="text-gray-700 dark:text-gray-200 hover:text-green-700 dark:hover:text-green-300 transition-colors duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -117,8 +117,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar with copyright */}
-        <div className="mt-8 pt-8 border-t border-gray-800">
-          <p className="text-center text-sm text-gray-400">
+        <div className="mt-8 pt-8 border-t border-gray-200/50 dark:border-gray-800/50">
+          <p className="text-center text-sm text-gray-700 dark:text-gray-200">
             &copy; {new Date().getFullYear()} Bean & Byte. All rights reserved.
           </p>
         </div>

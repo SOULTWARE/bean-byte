@@ -4,6 +4,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import "./globals.css";
 import Layout from "@/components/Layout";
 import BackgroundShapes from "@/components/BackgroundShapes";
+import favicon from "@/app/favicon.svg";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +19,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Bean & Byte",
   description: "Where Coffee Meets Code - A Modern Tech-Friendly Coffee Shop",
+  icons: {
+    icon: [
+      {
+        url: favicon.src,
+        type: "image/svg+xml",
+      }
+    ],
+  },
 };
 
 export default function RootLayout({
