@@ -176,10 +176,10 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         className={`${
-          isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
-        } md:hidden absolute top-16 inset-x-0 bg-white dark:bg-gray-950 border-b border-gray-200/50 dark:border-gray-800/50 shadow-lg transition-all duration-300 ease-in-out transform`}
+          isMobileMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 invisible'
+        } fixed left-0 right-0 top-16 bg-white dark:bg-gray-950 border-b border-gray-200/50 dark:border-gray-800/50 shadow-lg transition-all duration-300 ease-in-out transform z-40 md:hidden`}
       >
-        <div className="px-2 pt-2 pb-3 space-y-1">
+        <div className="px-4 pt-2 pb-3 space-y-1">
           {navigation.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -197,6 +197,53 @@ export default function Navbar() {
               </Link>
             );
           })}
+          <button
+            onClick={() => {
+              setTheme(theme === 'dark' ? 'light' : 'dark');
+              setIsMobileMenuOpen(false);
+            }}
+            className="w-full text-left px-3 py-2 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+          >
+            {mounted && (
+              <div className="flex items-center">
+                {theme === 'dark' ? (
+                  <>
+                    <svg
+                      className="w-5 h-5 text-yellow-500 mr-2"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                      />
+                    </svg>
+                    <span>Light Mode</span>
+                  </>
+                ) : (
+                  <>
+                    <svg
+                      className="w-5 h-5 text-gray-700 mr-2"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                      />
+                    </svg>
+                    <span>Dark Mode</span>
+                  </>
+                )}
+              </div>
+            )}
+          </button>
         </div>
       </div>
     </nav>
