@@ -1,0 +1,16 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cup -->
+  <path d="M120 140h160c11.046 0 20 8.954 20 20v140c0 11.046-8.954 20-20 20H120c-11.046 0-20-8.954-20-20V160c0-11.046 8.954-20 20-20z" fill="#4B5563"/>
+  <!-- Saucer -->
+  <path d="M100 320h200v10c0 5.523-4.477 10-10 10H110c-5.523 0-10-4.477-10-10v-10z" fill="#6B7280"/>
+  <!-- Latte Art (Git Branch) -->
+  <path d="M160 180c0 0 40 40 80 0" stroke="#F3F4F6" stroke-width="6" stroke-linecap="round"/>
+  <path d="M200 180v40" stroke="#F3F4F6" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="200" cy="240" r="10" fill="#F3F4F6"/>
+  <!-- Lavender Sprigs -->
+  <path d="M160 140c0 0 10-20 30-20" stroke="#7C3AED" stroke-width="4" stroke-linecap="round"/>
+  <path d="M180 140c0 0 10-20 30-20" stroke="#7C3AED" stroke-width="4" stroke-linecap="round"/>
+  <path d="M200 140c0 0 10-20 30-20" stroke="#7C3AED" stroke-width="4" stroke-linecap="round"/>
+  <!-- Git Command -->
+  <text x="160" y="280" fill="#F3F4F6" font-family="monospace" font-size="16">git push</text>
+</svg>

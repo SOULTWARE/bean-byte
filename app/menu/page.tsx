@@ -160,7 +160,7 @@ export default function MenuPage() {
   }, []);
 
   return (
-    <div className="min-h-screen space-y-8 sm:space-y-12 px-4 sm:px-6 lg:px-8">
+    <div className="space-y-8 sm:space-y-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-8">
       {/* Header Section */}
       <div ref={headerRef} className="text-center">
         <h1 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">Our Menu</h1>

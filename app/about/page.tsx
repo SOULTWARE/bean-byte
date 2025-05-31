@@ -58,7 +58,7 @@ export default function AboutPage() {
   });
 
   return (
-    <div className="space-y-12 sm:space-y-20 px-4 sm:px-6 lg:px-8">
+    <div className="space-y-12 sm:space-y-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-8">
       {/* Story Section */}
       <section
         ref={storyRef}

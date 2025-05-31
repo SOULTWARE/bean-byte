@@ -1,0 +1,20 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Glass -->
+  <path d="M120 80h160l-20 280H140L120 80z" fill="#E5E7EB"/>
+  <!-- Layers -->
+  <path d="M130 320h140v40H130v-40z" fill="#7C3AED"/>
+  <path d="M130 260h140v60H130v-60z" fill="#78350F"/>
+  <path d="M130 200h140v60H130v-60z" fill="#92400E"/>
+  <path d="M130 140h140v60H130v-60z" fill="#B45309"/>
+  <!-- Whipped Cream -->
+  <path d="M130 80c0 0 40-40 140 0" fill="#F3F4F6"/>
+  <!-- Cookie Crumbs -->
+  <circle cx="160" cy="100" r="4" fill="#92400E"/>
+  <circle cx="200" cy="90" r="4" fill="#92400E"/>
+  <circle cx="240" cy="100" r="4" fill="#92400E"/>
+  <!-- Straw -->
+  <path d="M260 60l-40 300" stroke="#DC2626" stroke-width="12" stroke-linecap="round"/>
+  <!-- Code Brackets -->
+  <text x="180" y="180" fill="#F3F4F6" font-family="monospace" font-size="24">{}</text>
+  <text x="180" y="240" fill="#F3F4F6" font-family="monospace" font-size="24">&lt;/&gt;</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Glass -->
+  <path d="M140 80h120l-20 280H160L140 80z" fill="#E5E7EB"/>
+  <!-- Matcha Layer -->
+  <path d="M150 180h100l-10 140H160L150 180z" fill="#059669"/>
+  <!-- Coffee Layer -->
+  <path d="M150 280h100l-10 40H160L150 280z" fill="#78350F"/>
+  <!-- Ice Cubes -->
+  <rect x="170" y="200" width="30" height="30" rx="5" fill="#E5E7EB" fill-opacity="0.5"/>
+  <rect x="200" y="240" width="30" height="30" rx="5" fill="#E5E7EB" fill-opacity="0.5"/>
+  <!-- React Logo -->
+  <ellipse cx="200" cy="150" rx="40" ry="15" stroke="#38BDF8" stroke-width="4" transform="rotate(30 200 150)"/>
+  <ellipse cx="200" cy="150" rx="40" ry="15" stroke="#38BDF8" stroke-width="4" transform="rotate(90 200 150)"/>
+  <ellipse cx="200" cy="150" rx="40" ry="15" stroke="#38BDF8" stroke-width="4" transform="rotate(150 200 150)"/>
+  <circle cx="200" cy="150" r="8" fill="#38BDF8"/>
+  <!-- Straw -->
+  <path d="M260 60l-40 300" stroke="#DC2626" stroke-width="12" stroke-linecap="round"/>
+</svg>
