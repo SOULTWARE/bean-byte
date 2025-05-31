@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" version="1.1" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <circle cx="200" cy="200" r="200" fill="#667eea"/>
+
+  <!-- Face -->
+  <circle cx="200" cy="180" r="100" fill="#fcd34d"/>
+
+  <!-- Hair -->
+  <path d="M100,180 Q200,50 300,180" fill="#1f2937"/>
+  <path d="M140,140 Q200,80 260,140" fill="#1f2937"/>
+
+  <!-- Eyes -->
+  <circle cx="160" cy="160" r="10" fill="#1f2937"/>
+  <circle cx="240" cy="160" r="10" fill="#1f2937"/>
+
+  <!-- Smile -->
+  <path d="M160,200 Q200,240 240,200" fill="none" stroke="#1f2937" stroke-width="6"/>
+
+  <!-- Coffee Cup -->
+  <g transform="translate(150,280)">
+    <path d="M20,0 h60 v40 h-60 Z" fill="#dc2626"/>
+    <path d="M10,40 h80 v10 h-80 Z" fill="#991b1b"/>
+    <path d="M90,15 Q110,25 90,35" fill="none" stroke="#991b1b" stroke-width="4"/>
+  </g>
+</svg>

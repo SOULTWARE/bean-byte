@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" version="1.1" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f3f4f6"/>
+
+  <!-- Counter -->
+  <rect x="50" y="250" width="700" height="200" fill="#4b5563"/>
+  <rect x="50" y="450" width="700" height="50" fill="#374151"/>
+
+  <!-- Coffee Machine -->
+  <g transform="translate(100,150)">
+    <rect width="200" height="150" rx="10" fill="#6b7280"/>
+    <rect x="20" y="20" width="160" height="80" rx="5" fill="#374151"/>
+    <circle cx="50" cy="130" r="10" fill="#d1d5db"/>
+    <circle cx="100" cy="130" r="10" fill="#d1d5db"/>
+    <circle cx="150" cy="130" r="10" fill="#d1d5db"/>
+  </g>
+
+  <!-- Grinder -->
+  <g transform="translate(350,200)">
+    <rect width="100" height="100" fill="#6b7280"/>
+    <rect x="20" y="-30" width="60" height="30" fill="#6b7280"/>
+    <circle cx="50" cy="25" r="20" fill="#374151"/>
+  </g>
+
+  <!-- Coffee Cups -->
+  <g transform="translate(500,200)">
+    <path d="M0,30 C0,10 50,10 50,30 L40,80 L10,80 Z" fill="#dc2626"/>
+    <path d="M60,30 C60,10 110,10 110,30 L100,80 L70,80 Z" fill="#dc2626"/>
+    <path d="M120,30 C120,10 170,10 170,30 L160,80 L130,80 Z" fill="#dc2626"/>
+  </g>
+
+  <!-- Menu Board -->
+  <g transform="translate(100,50)">
+    <rect width="150" height="80" fill="#1f2937"/>
+    <line x1="20" y1="20" x2="130" y2="20" stroke="#f3f4f6" stroke-width="2"/>
+    <line x1="20" y1="40" x2="130" y2="40" stroke="#f3f4f6" stroke-width="2"/>
+    <line x1="20" y1="60" x2="130" y2="60" stroke="#f3f4f6" stroke-width="2"/>
+  </g>
+</svg>

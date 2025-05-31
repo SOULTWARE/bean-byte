@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" version="1.1" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f3f4f6"/>
+
+  <!-- Desks -->
+  <g transform="translate(100,150)">
+    <!-- Desk 1 -->
+    <rect width="200" height="100" fill="#6b7280"/>
+    <rect x="20" y="20" width="160" height="100" rx="5" fill="#374151"/>
+    <!-- Laptop 1 -->
+    <g transform="translate(40,30)">
+      <rect width="120" height="80" rx="5" fill="#1f2937"/>
+      <rect x="10" y="10" width="100" height="60" fill="#059669"/>
+      <circle cx="60" cy="40" r="15" fill="#047857"/>
+    </g>
+  </g>
+
+  <g transform="translate(500,150)">
+    <!-- Desk 2 -->
+    <rect width="200" height="100" fill="#6b7280"/>
+    <rect x="20" y="20" width="160" height="100" rx="5" fill="#374151"/>
+    <!-- Laptop 2 -->
+    <g transform="translate(40,30)">
+      <rect width="120" height="80" rx="5" fill="#1f2937"/>
+      <rect x="10" y="10" width="100" height="60" fill="#7c3aed"/>
+      <circle cx="60" cy="40" r="15" fill="#6d28d9"/>
+    </g>
+  </g>
+
+  <!-- Power Outlets -->
+  <g transform="translate(50,400)">
+    <rect width="40" height="20" rx="5" fill="#4b5563"/>
+    <circle cx="15" cy="10" r="3" fill="#d1d5db"/>
+    <circle cx="25" cy="10" r="3" fill="#d1d5db"/>
+  </g>
+
+  <g transform="translate(450,400)">
+    <rect width="40" height="20" rx="5" fill="#4b5563"/>
+    <circle cx="15" cy="10" r="3" fill="#d1d5db"/>
+    <circle cx="25" cy="10" r="3" fill="#d1d5db"/>
+  </g>
+
+  <!-- Wi-Fi Symbol -->
+  <g transform="translate(375,50)">
+    <path d="M0,50 Q25,0 50,50" fill="none" stroke="#059669" stroke-width="3"/>
+    <path d="M10,40 Q25,10 40,40" fill="none" stroke="#059669" stroke-width="3"/>
+    <path d="M20,30 Q25,20 30,30" fill="none" stroke="#059669" stroke-width="3"/>
+    <circle cx="25" cy="35" r="2" fill="#059669"/>
+  </g>
+</svg>

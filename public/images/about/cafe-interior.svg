@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" version="1.1" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f3f4f6"/>
+
+  <!-- Windows -->
+  <rect x="50" y="50" width="200" height="300" fill="#e5e7eb"/>
+  <rect x="300" y="50" width="200" height="300" fill="#e5e7eb"/>
+  <rect x="550" y="50" width="200" height="300" fill="#e5e7eb"/>
+
+  <!-- Tables -->
+  <g transform="translate(100,400)">
+    <rect width="120" height="80" rx="5" fill="#4b5563"/>
+    <circle cx="30" cy="100" r="10" fill="#374151"/>
+    <circle cx="90" cy="100" r="10" fill="#374151"/>
+  </g>
+
+  <g transform="translate(340,400)">
+    <rect width="120" height="80" rx="5" fill="#4b5563"/>
+    <circle cx="30" cy="100" r="10" fill="#374151"/>
+    <circle cx="90" cy="100" r="10" fill="#374151"/>
+  </g>
+
+  <g transform="translate(580,400)">
+    <rect width="120" height="80" rx="5" fill="#4b5563"/>
+    <circle cx="30" cy="100" r="10" fill="#374151"/>
+    <circle cx="90" cy="100" r="10" fill="#374151"/>
+  </g>
+
+  <!-- Plants -->
+  <g transform="translate(250,350)">
+    <rect width="40" height="50" fill="#047857"/>
+    <path d="M0,0 Q20,-20 40,0" fill="none" stroke="#059669" stroke-width="3"/>
+    <path d="M0,10 Q20,-10 40,10" fill="none" stroke="#059669" stroke-width="3"/>
+  </g>
+
+  <g transform="translate(500,350)">
+    <rect width="40" height="50" fill="#047857"/>
+    <path d="M0,0 Q20,-20 40,0" fill="none" stroke="#059669" stroke-width="3"/>
+    <path d="M0,10 Q20,-10 40,10" fill="none" stroke="#059669" stroke-width="3"/>
+  </g>
+</svg>
