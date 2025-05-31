@@ -118,6 +118,77 @@ const menuData: MenuCategory[] = [
   },
 ];
 
+const HeroBackground = () => (
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    {/* Main decorative elements */}
+    <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
+      <svg width="100%" height="100%" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+        {/* Coffee cup circuit paths */}
+        <path
+          d="M200,500 Q400,350 600,500 T1000,500"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          className="animate-pulse"
+        />
+        <path
+          d="M0,600 Q200,450 400,600 T800,600"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          className="animate-pulse"
+          style={{ animationDelay: '1s' }}
+        />
+
+        {/* Coffee beans as nodes */}
+        <circle cx="300" cy="500" r="8" fill="currentColor" className="animate-ping" style={{ animationDuration: '3s' }} />
+        <circle cx="500" cy="450" r="6" fill="currentColor" className="animate-ping" style={{ animationDuration: '4s' }} />
+        <circle cx="700" cy="500" r="8" fill="currentColor" className="animate-ping" style={{ animationDuration: '3.5s' }} />
+
+        {/* Code brackets */}
+        <path
+          d="M250,300 L200,350 L250,400"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          className="animate-pulse"
+          style={{ animationDelay: '0.5s' }}
+        />
+        <path
+          d="M750,300 L800,350 L750,400"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          className="animate-pulse"
+          style={{ animationDelay: '0.5s' }}
+        />
+
+        {/* Binary dots grid */}
+        <g className="opacity-30">
+          {Array.from({ length: 10 }).map((_, i) =>
+            Array.from({ length: 10 }).map((_, j) => (
+              <circle
+                key={`dot-${i}-${j}`}
+                cx={100 + i * 90}
+                cy={200 + j * 70}
+                r="2"
+                fill="currentColor"
+                className={i % 2 === j % 2 ? 'animate-pulse' : ''}
+                style={{ animationDelay: `${(i + j) * 0.1}s` }}
+              />
+            ))
+          )}
+        </g>
+      </svg>
+    </div>
+
+    {/* Gradient overlays */}
+    <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-green-500/5 blur-3xl" />
+    <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-green-500/5 blur-3xl" />
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-green-500/5 blur-3xl opacity-50" />
+  </div>
+);
+
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState(-1); // -1 represents "All"
   const headerRef = useRef<HTMLDivElement>(null);
@@ -195,24 +266,43 @@ export default function MenuPage() {
 
   return (
     <div className="relative min-h-screen py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-green-500/5 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-green-500/5 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-green-500/5 blur-3xl opacity-50" />
-      </div>
+      {/* Replace the old decorative elements with our new HeroBackground */}
+      <HeroBackground />
 
       <div className="relative max-w-7xl mx-auto">
-        {/* Header Section */}
+        {/* Header Section with enhanced styling */}
         <div ref={headerRef} className="text-center mb-12 sm:mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-emerald-700">
-            Our Menu
-          </h1>
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <div className="relative inline-block">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-emerald-700">
+              Our Menu
+            </h1>
+            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-green-500/0 via-green-500/50 to-green-500/0"></div>
+          </div>
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-6">
             Discover our selection of carefully crafted beverages and delicious treats,
             <br className="hidden sm:block" />
             made with premium ingredients and lots of love.
           </p>
+          <div className="mt-8 flex justify-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+            <span className="flex items-center">
+              <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Made Fresh Daily
+            </span>
+            <span className="flex items-center">
+              <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              Tech-Inspired
+            </span>
+            <span className="flex items-center">
+              <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+              Crafted with Love
+            </span>
+          </div>
         </div>
 
         {/* Category Navigation */}
