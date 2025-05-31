@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from '@/components/ThemeProvider';
 import "./globals.css";
 import Layout from "@/components/Layout";
 import BackgroundShapes from "@/components/BackgroundShapes";
@@ -15,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bean and Byte",
-  description: "Your favorite coffee shop",
+  title: "Bean & Byte",
+  description: "Where Coffee Meets Code - A Modern Tech-Friendly Coffee Shop",
 };
 
 export default function RootLayout({
@@ -25,12 +26,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <BackgroundShapes />
-        <Layout>{children}</Layout>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeProvider>
+          <BackgroundShapes />
+          <Layout>{children}</Layout>
+        </ThemeProvider>
       </body>
     </html>
   );
