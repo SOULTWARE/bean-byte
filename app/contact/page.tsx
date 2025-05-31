@@ -9,6 +9,117 @@ interface FormData {
   message: string;
 }
 
+const ContactBackground = () => (
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    {/* Main decorative elements */}
+    <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
+      <svg width="100%" height="100%" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+        {/* Message paths */}
+        <path
+          d="M100,200 C300,150 700,250 900,200"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          className="animate-pulse"
+        />
+        <path
+          d="M100,400 C300,350 700,450 900,400"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          className="animate-pulse"
+          style={{ animationDelay: '1s' }}
+        />
+
+        {/* Envelope icons */}
+        {Array.from({ length: 3 }).map((_, i) => (
+          <g key={`envelope-${i}`} transform={`translate(${200 + i * 300}, ${300 + (i % 2) * 100})`}>
+            <rect
+              x="-20"
+              y="-15"
+              width="40"
+              height="30"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="animate-pulse"
+              style={{ animationDelay: `${i * 0.3}s` }}
+            />
+            <path
+              d="M-20,-15 L0,0 L20,-15 M-20,15 L0,0 L20,15"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="animate-pulse"
+              style={{ animationDelay: `${i * 0.3}s` }}
+            />
+          </g>
+        ))}
+
+        {/* Connection dots */}
+        {Array.from({ length: 20 }).map((_, i) => (
+          <circle
+            key={`dot-${i}`}
+            cx={50 + (i % 10) * 100}
+            cy={600 + Math.floor(i / 10) * 100}
+            r="2"
+            fill="currentColor"
+            className={i % 3 === 0 ? 'animate-ping' : ''}
+            style={{ animationDuration: `${2 + (i % 3)}s` }}
+          />
+        ))}
+
+        {/* Communication icons */}
+        {Array.from({ length: 4 }).map((_, i) => (
+          <g key={`icon-${i}`} transform={`translate(${150 + i * 250}, 800)`}>
+            <circle
+              r="12"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="animate-pulse"
+              style={{ animationDelay: `${i * 0.4}s` }}
+            />
+            {/* Chat bubble indicator */}
+            <path
+              d="M-6,-6 L6,6 M-6,6 L6,-6"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="animate-pulse"
+              style={{ animationDelay: `${i * 0.4}s` }}
+            />
+          </g>
+        ))}
+
+        {/* Curved connecting lines */}
+        <path
+          d="M0,700 Q500,600 1000,700"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+          strokeDasharray="5,5"
+          className="animate-pulse"
+          style={{ animationDelay: '0.5s' }}
+        />
+        <path
+          d="M0,900 Q500,800 1000,900"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+          strokeDasharray="5,5"
+          className="animate-pulse"
+          style={{ animationDelay: '0.7s' }}
+        />
+      </svg>
+    </div>
+
+    {/* Gradient overlays */}
+    <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-green-500/5 blur-3xl" />
+    <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-green-500/5 blur-3xl" />
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-green-500/5 blur-3xl opacity-50" />
+  </div>
+);
+
 export default function ContactPage() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -88,20 +199,18 @@ export default function ContactPage() {
 
   return (
     <div className="relative min-h-screen py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-green-500/5 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-green-500/5 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-green-500/5 blur-3xl opacity-50" />
-      </div>
+      <ContactBackground />
 
       <div className="relative max-w-7xl mx-auto">
         {/* Header Section */}
         <div ref={headerRef} className="text-center mb-12 sm:mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-emerald-700">
-            Get in Touch
-          </h1>
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <div className="relative inline-block">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-emerald-700">
+              Get in Touch
+            </h1>
+            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-green-500/0 via-green-500/50 to-green-500/0"></div>
+          </div>
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-6">
             Have questions about our coffee, tech events, or just want to say hello?
             <br className="hidden sm:block" />
             We'd love to hear from you!
@@ -213,9 +322,12 @@ export default function ContactPage() {
             ref={infoRef}
             className="relative bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50"
           >
-            <h2 className="text-2xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-emerald-700">
-              Visit Our Space
-            </h2>
+            <div className="relative text-center mx-auto mb-8">
+              <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-emerald-700">
+                Visit Our Space
+              </h2>
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-green-500/0 via-green-500/50 to-green-500/0"></div>
+            </div>
 
             {/* Map Placeholder with better styling */}
             <div className="aspect-video mb-8 rounded-lg overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800">

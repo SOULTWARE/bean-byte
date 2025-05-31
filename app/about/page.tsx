@@ -32,6 +32,102 @@ const teamMembers: TeamMember[] = [
   },
 ];
 
+const AboutBackground = () => (
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    {/* Main decorative elements */}
+    <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
+      <svg width="100%" height="100%" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+        {/* Community connection paths */}
+        <path
+          d="M100,300 Q300,200 500,300 T900,300"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          className="animate-pulse"
+        />
+        <path
+          d="M100,500 Q300,400 500,500 T900,500"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          className="animate-pulse"
+          style={{ animationDelay: '1s' }}
+        />
+
+        {/* Coffee bean motifs */}
+        <g className="opacity-40">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <g key={`bean-${i}`} transform={`translate(${200 + i * 300}, 200)`}>
+              <path
+                d="M0,0 C5,-10 15,-10 20,0 C25,10 15,20 10,20 C5,20 -5,10 0,0"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="animate-pulse"
+                style={{ animationDelay: `${i * 0.3}s` }}
+              />
+            </g>
+          ))}
+        </g>
+
+        {/* Tech elements */}
+        <g className="opacity-30">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <g key={`code-${i}`} transform={`translate(${150 + i * 250}, ${600 + (i % 2) * 50})`}>
+              <text
+                fill="currentColor"
+                fontSize="12"
+                className="animate-pulse"
+                style={{ animationDelay: `${i * 0.2}s` }}
+              >
+                {'{code}'}
+              </text>
+            </g>
+          ))}
+        </g>
+
+        {/* Connection points */}
+        {Array.from({ length: 5 }).map((_, i) => (
+          <circle
+            key={`node-${i}`}
+            cx={200 + i * 200}
+            cy={400}
+            r={4}
+            fill="currentColor"
+            className="animate-ping"
+            style={{ animationDuration: `${2 + i * 0.5}s` }}
+          />
+        ))}
+
+        {/* Community icons */}
+        <g className="opacity-40">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <g key={`icon-${i}`} transform={`translate(${300 + i * 200}, 700)`}>
+              <circle
+                r="15"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+                className="animate-pulse"
+                style={{ animationDelay: `${i * 0.4}s` }}
+              />
+              <circle
+                r="3"
+                fill="currentColor"
+              />
+            </g>
+          ))}
+        </g>
+      </svg>
+    </div>
+
+    {/* Gradient overlays */}
+    <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-green-500/5 blur-3xl" />
+    <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-green-500/5 blur-3xl" />
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-green-500/5 blur-3xl opacity-50" />
+  </div>
+);
+
 export default function AboutPage() {
   const storyRef = useRef<HTMLDivElement>(null);
   const imagesRef = useRef<HTMLDivElement>(null);
@@ -59,12 +155,7 @@ export default function AboutPage() {
 
   return (
     <div className="relative min-h-screen py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-green-500/5 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-green-500/5 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-green-500/5 blur-3xl opacity-50" />
-      </div>
+      <AboutBackground />
 
       <div className="relative max-w-7xl mx-auto space-y-16 sm:space-y-24">
         {/* Story Section */}
@@ -72,9 +163,12 @@ export default function AboutPage() {
           ref={storyRef}
           className="relative bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl p-8 sm:p-12 rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50"
         >
-          <h1 className="text-4xl sm:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-emerald-700 text-center">
-            Our Story
-          </h1>
+          <div className="relative mx-auto">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-emerald-700 text-center">
+              Our Story
+            </h1>
+            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-green-500/0 via-green-500/50 to-green-500/0"></div>
+          </div>
           <div className="max-w-3xl mx-auto text-base sm:text-lg text-gray-600 dark:text-gray-400 space-y-6">
             <p className="relative">
               <span className="absolute -left-4 top-0 text-4xl text-green-500/20">"</span>
@@ -127,9 +221,12 @@ export default function AboutPage() {
           ref={teamRef}
           className="relative"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-emerald-700">
-            Meet Our Team
-          </h2>
+          <div className="relative inline-block mx-auto mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-emerald-700">
+              Meet Our Team
+            </h2>
+            <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-green-500/0 via-green-500/50 to-green-500/0"></div>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
             {teamMembers.map((member) => (
               <div
@@ -148,7 +245,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-1">{member.name}</h3>
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-1 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300">{member.name}</h3>
                   <p className="text-green-600 dark:text-green-400 font-medium mb-4">{member.role}</p>
                   <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">{member.bio}</p>
                 </div>
