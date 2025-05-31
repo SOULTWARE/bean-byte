@@ -62,7 +62,7 @@ export default function ContactPage() {
 		<div className="space-y-8 sm:space-y-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-8">
 			<div className="text-center">
 				<h1 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">Contact Us</h1>
-				<p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Have questions about our coffee, tech events, or just want to say hello? We'd love to hear from you!max-w-7xl mx-auto py-8</p>
+				<p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Have questions about our coffee, tech events, or just want to say hello? We'd love to hear from you!</p>
 			</div>
 
 			<div className="grid md:grid-cols-2 gap-8 sm:gap-12">
