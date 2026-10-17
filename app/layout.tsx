@@ -19,6 +19,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Bean & Byte",
   description: "Where Coffee Meets Code - A Modern Tech-Friendly Coffee Shop",
+  robots: {
+    index: false,
+    follow: true,
+    googleBot: {
+      index: false,
+      follow: true,
+    },
+  },
   icons: {
     icon: [
       {
